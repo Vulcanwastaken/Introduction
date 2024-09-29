@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,6 +45,7 @@
 
     .wrapper {
       text-align: center;
+      position: relative; /* Added to position the image */
     }
 
     .wrapper h1 {
@@ -79,13 +81,20 @@
     }
 
     .profile-picture {
-      width: 150px;
-      height: 150px;
+      width: 200px; /* Increased size */
+      height: 200px; /* Increased size */
       border-radius: 50%;
       border: 3px solid #ffffff;
       display: block;
       margin: 20px auto;
       filter: grayscale(100%); /* Convert image to black and white */
+      animation: fade 3s infinite; /* Fading effect */
+    }
+
+    @keyframes fade {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
     }
 
     .description-text {
@@ -104,7 +113,7 @@
       position: absolute;
       width: 10px;
       height: 10px;
-      background: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 0, 0, 0.5); /* Changed to red */
       border-radius: 50%;
       animation: sparkle 1.5s infinite;
       pointer-events: none; /* Prevents mouse interaction */
