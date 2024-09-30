@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,7 @@
   <meta content="https://cdn.discordapp.com/avatars/1025021353209892875/f75c350d4e3f5c09104a29c48848fec6?size=1024" property="og:image" />
   <meta property="og:description" content="Personal bio site of Vulcan.">
   <meta name="theme-color" content="#E7BF8F">
+  
   <style>
     body {
       margin: 0;
@@ -65,17 +67,60 @@
       }
     }
 
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -200px 0;
+      }
+      100% {
+        background-position: 200px 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .profile-container {
       text-align: center;
       position: relative;
       background-color: rgba(0, 0, 0, 0.685);
       padding: 20px;
       border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 0 15px yellow, 0 0 30px yellow, 0 0 45px yellow;
       max-width: 340px;
       width: 100%;
       border: 1px solid #ffffff;
-      z-index: 3; /* Ensure it sits above the overlay */
+      z-index: 3;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .profile-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      background-size: 200px 100%;
+      animation: shimmer 2s infinite;
+      z-index: -1;
     }
 
     .profile-picture {
@@ -85,30 +130,61 @@
       border: 3px solid #ffffff;
       display: block;
       margin: 20px auto;
-      filter: grayscale(100%); /* Convert image to black and white */
-      box-shadow: 0 0 10px white, 0 0 20px white; /* Glowing effect */
+      filter: grayscale(100%);
+      box-shadow: 0 0 10px white, 0 0 20px white;
+      animation: float 3s ease-in-out infinite;
     }
 
     .description-text {
       color: white;
       font-family: 'Noto Sans Mono', monospace;
-      text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red; /* Glowing effect */
+      text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red;
     }
 
-    @keyframes sparkle {
-      0% { transform: scale(1); opacity: 0.5; }
-      50% { transform: scale(1.2); opacity: 1; }
-      100% { transform: scale(1); opacity: 0.5; }
+    .icon-container {
+      text-align: center;
+      margin-top: 20px;
     }
 
-    .sparkle {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: rgba(255, 0, 0, 0.5); /* Red color for the sparkle */
+    .icon {
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      animation: sparkle 1.5s infinite;
-      pointer-events: none; /* Prevents mouse interaction */
+      border: 3px solid #ffffff;
+      display: block;
+      margin: 0 auto;
+      animation: float 3s ease-in-out infinite;
+      box-shadow: 0 0 15px blue, 0 0 30px blue;
+      cursor: pointer;
+    }
+
+    .reveal-text {
+      font-size: 20px;
+      color: white;
+      margin-top: 20px;
+      text-shadow: 0 0 10px blue, 0 0 20px blue;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes grow {
+      0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+      }
+      100% {
+        width: 40px;
+        height: 40px;
+        opacity: 0;
+      }
+    }
+
+    .circle {
+      position: absolute;
+      background: rgba(0, 128, 255, 0.7);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: grow 1.5s forwards;
     }
   </style>
 </head>
@@ -124,16 +200,21 @@
     </div>
   </div>
 
+  <div class="icon-container">
+    <img src="https://tse4.mm.bing.net/th?id=OIP.YKvVSghuYL1U50kVRcKhjAHaHa&pid=Api&P=0&h=220" alt="Icon" class="icon">
+    <div class="reveal-text">vulcanwastaken</div>
+  </div>
+
   <script>
     document.body.onmousemove = function(e) {
-      const sparkle = document.createElement('div');
-      sparkle.classList.add('sparkle');
-      sparkle.style.left = e.pageX + 'px';
-      sparkle.style.top = e.pageY + 'px';
-      document.body.appendChild(sparkle);
+      const circle = document.createElement('div');
+      circle.classList.add('circle');
+      circle.style.left = e.pageX + 'px';
+      circle.style.top = e.pageY + 'px';
+      document.body.appendChild(circle);
       setTimeout(() => {
-        sparkle.remove();
-      }, 1500); // Remove sparkle after 1.5 seconds
+        circle.remove();
+      }, 1500);
     }
   </script>
 
